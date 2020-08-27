@@ -86,11 +86,12 @@ class Solution {
     }
     //Creating the loop.
     Node temp = head, extra = null;
-    for(int i=0; i<n && temp.next!=null ; i++){
+    for(int i=0; i<n; i++){
       //the index matches with the node index, store its address.
       if(i == index)
         extra = temp;
-      temp = temp.next;
+      if(temp.next!=null)
+        temp = temp.next;
     }
     //add the stored address at the end of the last node.
     temp.next = extra;
